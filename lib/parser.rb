@@ -22,7 +22,7 @@ class Parser
   def generate_log_entries
     return @log_entries if defined?(@log_entries)
 
-    @log_entries = Hash.new { |h, k| h[k] = {visitors: [], unique_visits: 0, all_visits: 0} }
+    @log_entries = Hash.new { |h, k| h[k] = { visitors: [], unique_visits: 0, all_visits: 0 } }
     file = File.new file_path
     file.each do |line|
       url, ip = line.strip.split(' ', 2)

@@ -14,7 +14,7 @@ class LogAnalyzer
     summarize(
       entries: sort_entries_by(visit_type: :all_visits),
       visit_type: :all_visits,
-      message: "visits"
+      message: 'visits'
     )
   end
 
@@ -22,7 +22,7 @@ class LogAnalyzer
     summarize(
       entries: sort_entries_by(visit_type: :unique_visits),
       visit_type: :unique_visits,
-      message: "unique visits"
+      message: 'unique visits'
     )
   end
 
@@ -33,6 +33,6 @@ class LogAnalyzer
   end
 
   def sort_entries_by(visit_type:)
-    log_entries.sort_by {|url, visitor_info| [-visitor_info[visit_type], url]}.to_h
+    log_entries.sort_by { |url, visitor_info| [-visitor_info[visit_type], url] }.to_h
   end
 end

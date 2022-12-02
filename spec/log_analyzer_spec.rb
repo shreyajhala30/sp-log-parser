@@ -26,9 +26,10 @@ RSpec.describe LogAnalyzer do
     let(:all_visits) { analyzer.all_visits }
     let(:expected_and_sorted_all_visits) do
       {
-        '/help_page/1' => {:all_visits=>4, :unique_visits=>3, :visitors=>['126.318.035.038', '929.398.951.889', '722.247.931.582', '929.398.951.889']},
-        '/about' => {:all_visits=>2, :unique_visits=>1, :visitors=>['061.945.150.735', '061.945.150.735']},
-        '/about/2' => {:all_visits=>1, :unique_visits=>1, :visitors=>['444.701.448.104']}
+        '/help_page/1' => { all_visits: 4, unique_visits: 3,
+                            visitors: ['126.318.035.038', '929.398.951.889', '722.247.931.582', '929.398.951.889'] },
+        '/about' => { all_visits: 2, unique_visits: 1, visitors: ['061.945.150.735', '061.945.150.735'] },
+        '/about/2' => { all_visits: 1, unique_visits: 1, visitors: ['444.701.448.104'] }
       }
     end
 
@@ -49,9 +50,10 @@ RSpec.describe LogAnalyzer do
     let(:unique_visits) { analyzer.unique_visits }
     let(:expected_and_sorted_unique_visits) do
       {
-        '/help_page/1' => {:all_visits=>4, :unique_visits=>3, :visitors=>['126.318.035.038', '929.398.951.889', '722.247.931.582', '929.398.951.889']},
-        '/about' => {:all_visits=>2, :unique_visits=>1, :visitors=>['061.945.150.735', '061.945.150.735']},
-        '/about/2' => {:all_visits=>1, :unique_visits=>1, :visitors=>['444.701.448.104']}
+        '/help_page/1' => { all_visits: 4, unique_visits: 3,
+                            visitors: ['126.318.035.038', '929.398.951.889', '722.247.931.582', '929.398.951.889'] },
+        '/about' => { all_visits: 2, unique_visits: 1, visitors: ['061.945.150.735', '061.945.150.735'] },
+        '/about/2' => { all_visits: 1, unique_visits: 1, visitors: ['444.701.448.104'] }
       }
     end
 
