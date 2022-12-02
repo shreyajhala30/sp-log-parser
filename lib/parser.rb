@@ -2,8 +2,6 @@
 
 class Parser
   class Error < StandardError; end
-  CHUNK_SIZE_IN_BYTES = 4096
-
   attr_reader :file_path
 
   def initialize(file_path:)
