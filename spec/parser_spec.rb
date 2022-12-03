@@ -34,6 +34,14 @@ RSpec.describe Parser do
       end
     end
 
+    context 'when the log entries generation fails' do
+      before { allow(parser).to receive(:generate_log_entries).and_raise(StandardError.new, 'Unknown failure') }
+
+      it 'raises parser error' do
+        expect { parser.log_entries }.to raise_error(Parser::Error, /Unexpected Processing Failure: Unknown failure/)
+      end
+    end
+
     context 'when the file contains logs' do
       let(:expected_log_entires) do
         {

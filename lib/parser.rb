@@ -15,6 +15,8 @@ class Parser
     return {} if File.empty?(file_path)
 
     generate_log_entries
+  rescue StandardError => e
+    raise Error.new("Unexpected Processing Failure: #{e.message}")
   end
 
   private
@@ -31,7 +33,5 @@ class Parser
       @log_entries[url][:all_visits] = @log_entries[url][:all_visits] + 1
     end
     @log_entries
-  rescue StandardError => e
-    raise Error, "Unexpected Processing Failure: #{e.message}"
   end
 end
